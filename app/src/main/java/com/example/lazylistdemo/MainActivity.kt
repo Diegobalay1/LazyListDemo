@@ -5,6 +5,8 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Card
 import androidx.compose.material.MaterialTheme
@@ -46,7 +48,12 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun MainScreen(itemArray: Array<out String>) {
     //ImageLoader(item = "Plymouth GTX")
-    MyListItem(item = "Buick Roadmaster")
+    //MyListItem(item = "Buick Roadmaster")
+    LazyColumn {
+        items(itemArray) { model ->
+            MyListItem(item = model)
+        }
+    }
 }
 
 // Coil - images
