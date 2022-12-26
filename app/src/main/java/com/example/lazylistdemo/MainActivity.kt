@@ -53,6 +53,7 @@ fun MainScreen(itemArray: Array<out String>) {
     //MyListItem(item = "Buick Roadmaster")
 
     val context = LocalContext.current
+    val groupedItems = itemArray.groupBy { it.substringBefore(' ') }
 
     val onListItemClick = { text: String ->
         Toast.makeText(
